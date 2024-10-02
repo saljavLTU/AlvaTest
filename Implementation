@@ -1,0 +1,128 @@
+![image](https://github.com/user-attachments/assets/382cdaed-c176-4bbd-ab2a-91d299f3c105)# TODO
+> Edit this file to add your answeres to each TODO item. Its okay to link to external documentation as well, just remember to ensure that our reviewers has access.
+> When you're ready to submit, click **Commit changes...** and save your responses to a new branch titled 'implementation' and create a pull request.
+
+>Before you start reading, please configure your environment as described in the "Before you get started" README section of your GitHub repository.*
+
+In this task, you will work with the [Chicago Crime Dataset](https://console.cloud.google.com/bigquery?ws=!1m5!1m4!4m3!1salva-coding-test!2schicago_crime!3scrime) to figure out some insights regarding the crimes commited in Chicago.
+
+Here are some examples of the columns you will work with:
+
+|Variable|Description|
+|----:|-----|
+|primary_type |What type of crime was committed|
+|location_description |Description of the location where the crime was committed|
+|arrest|If the crime led to an arrest or not|
+
+Feel free to explore the dataset and try out different queries using the BigQuery interface.
+Once you have a query that answers the question, add the code snippet to the specific question as well any supportive reasoning/comment that you may have.
+
+## Task 1 
+
+From what date is the oldest data point in the data set? 
+
+> TODO: The oldest data point is from: 2001-01-11 14:10:00
+
+## Task 2
+
+Which year had the highest amount of crimes?
+
+> TODO: The year with the highest amount of crimes is 2019 with 46 crimes.
+
+## Task 3
+
+Let's define "Arrest Rate" as the share of crimes that led to an arrest.
+
+What year had the highest arrest rate? What is the overall trend in number of crimes per year?
+
+> TODO: The year with the highest arrest rate is 2014 with an arrest rate of 39.13%.
+year
+2001    21
+2002    22
+2003    17
+2004    17
+2005    13
+2006    11
+2007    14
+2008    18
+2009    10
+2010    14
+2011     9
+2012    28
+2013    33
+2014    23
+2015    24
+2016    32
+2017    29
+2018    27
+2019    46
+2020    16
+2021    20
+2022    21
+2023    24
+2024    11
+
+## Task 4
+
+What were the five most common crimes in 2020? Which of those crimes had the highest and lowest arrest rate?
+
+> TODO: The five most common crimes in 2020 are:
+ primary_type
+THEFT                  10
+BATTERY                 3
+ASSAULT                 1
+BURGLARY                1
+MOTOR VEHICLE THEFT     1
+Name: count, dtype: int64
+The crime with the highest arrest rate in 2020 is BATTERY with an arrest rate of 33.33%.
+The crime with the lowest arrest rate in 2020 is ASSAULT with an arrest rate of 0.00%.
+
+## Task 5
+
+Investigate which year that had the highest number of crimes leading to an arrest. What year was it, and how many arrests were made during that year?
+
+> TODO: The year with the highest number of crimes leading to an arrest is 2019, with 15 arrests.
+
+## Task 6
+
+How has the arrest rate looked like over time? 
+- Plot the trend of the arrest rate.
+- Between which years can you see the biggest change in "Arrest Rate"?
+- Can you point at specific reasons to why the Arrest Rate dropped between those years? Comment on your conclusions.
+
+> Since the data set is constantly updating, disregard the year 2021 and later for the analysis in this question.
+
+> TODO: The biggest increase in arrest rate occurred between 2017 and 2018.
+The biggest drop in arrest rate occurred between 2019 and 2020.
+![Task6-plot](https://github.com/user-attachments/assets/e8f3c5f8-9e9d-4f7f-8140-1b9ae7241598)
+
+## Task 7
+
+* What was the arrest rate for thefts during 2017 and 2018?
+* How much did the arrest rate decrease between those two years?
+* Perform a t-test to determine if the decrease in arrest rate is significant at a 95% confidence level. 
+
+Comment on your conclusions.
+
+> TODO: Arrest rate for thefts in 2017: 19.05%
+Arrest rate for thefts in 2018: 39.13%
+The arrest rate decreased by: -20.08%
+The decrease in arrest rate is not statistically significant (p-value = 0.1516).
+
+Interpretation of the Results:
+Arrest Rate for Thefts in 2017: 19.05%
+
+In 2017, about 19.05% of thefts led to an arrest. This means that, for every 100 thefts, roughly 19 resulted in someone being arrested.
+Arrest Rate for Thefts in 2018: 39.13%
+
+In 2018, the arrest rate for thefts increased to 39.13%, meaning nearly 39 out of every 100 thefts led to an arrest.
+The Arrest Rate Decreased by: -20.08%
+
+The negative value of the decrease (-20.08%) means that the arrest rate increased by 20.08% from 2017 to 2018 (because the arrest rate in 2018 is higher than in 2017).
+The Decrease in Arrest Rate is Not Statistically Significant (p-value = 0.1516)
+
+The p-value of 0.1516 indicates that the difference in arrest rates between 2017 and 2018 is not statistically significant at the common 5% significance level (α = 0.05).
+A p-value of 0.1516 means there is a 15.16% chance that the observed increase in the arrest rate occurred due to random chance. Since this value is greater than 0.05, we fail to reject the null hypothesis, meaning that there isn't enough evidence to conclude that the difference in arrest rates between 2017 and 2018 is meaningful from a statistical perspective.
+Conclusion:
+The arrest rate increased by 20.08% from 2017 to 2018, but this change is not statistically significant, as the p-value is above the typical threshold of 0.05.
+In other words, while there was a noticeable increase in the arrest rate for thefts, the data does not provide strong enough evidence to say that this increase was not due to random variation or chance.
